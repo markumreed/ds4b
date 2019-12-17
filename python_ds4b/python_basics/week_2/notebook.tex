@@ -1,0 +1,1325 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{flow\_control\_handout}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{flow-control}{%
+\section{Flow Control}\label{flow-control}}
+
+\begin{itemize}
+\tightlist
+\item
+  A program is just a series of instructions
+\item
+  Strength of programming isn't just running one instruction after
+  another
+\item
+  Based on how the expressions evaluate, the program can decide to skip
+  instructions, repeat them, or choose one of several instructions to
+  run
+\item
+  Flow control statements can decide which instructions to execute under
+  which conditions
+\end{itemize}
+
+    \hypertarget{flow-control}{%
+\subsection{Flow Control}\label{flow-control}}
+
+\begin{itemize}
+\tightlist
+\item
+  Flow control statements directly correspond to the symbols in a
+  flowchart
+\item
+  What to do if it's raining?
+\end{itemize}
+
+    \hypertarget{flow-control}{%
+\subsection{Flow Control}\label{flow-control}}
+
+\begin{itemize}
+\item
+  There is more than one way to go from the start to the end.
+\item
+  Flowcharts represent these branching points with diamonds, while the
+  other steps are represented with rectangles. The starting and ending
+  steps are represented with rounded rectangles.
+\item
+  But before you learn about flow control statements, you first need to
+  learn how to represent those yes and no options, and you need to
+  understand how to write those branching points as Python code.
+\item
+  To do this we need Boolean values, comparison operators, and Boolean
+  operators.
+\end{itemize}
+
+    \hypertarget{boolean-values}{%
+\section{Boolean Values}\label{boolean-values}}
+
+\begin{itemize}
+\tightlist
+\item
+  While the integer, floating-point, and string data types have an
+  unlimited number of possible values
+\item
+  Boolean data type has only two values: \texttt{True} and
+  \texttt{False}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{spam} \PY{o}{=} \PY{k+kc}{True}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{spam}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} True
+\end{Verbatim}
+            
+    \hypertarget{boolean-values-errors-and-protected-keywords}{%
+\subsection{Boolean Values (Errors and Protected
+keywords)}\label{boolean-values-errors-and-protected-keywords}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} Boolean vaules must start with capital T or F}
+        \PY{n}{true}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-3-cae9d639713c> in <module>()
+          1 \# Boolean vaules must start with capital T or F
+    ----> 2 true
+    
+
+        NameError: name 'true' is not defined
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kc}{True} \PY{o}{=} \PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{4} \PY{c+c1}{\PYZsh{} Booleans are protected in Python}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+          File "<ipython-input-4-bb6e53e42985>", line 1
+        True = 2 + 4 \# Booleans are protected in Python
+                                                       \^{}
+    SyntaxError: can't assign to keyword
+
+
+    \end{Verbatim}
+
+    \hypertarget{comparsison-operators}{%
+\section{Comparsison Operators}\label{comparsison-operators}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Comparision operators} comepate two values and evaluate down
+  to a single Boolean value
+\end{itemize}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Operator & Meaning\tabularnewline
+\midrule
+\endhead
+== & Equal to\tabularnewline
+!= & Not equal to\tabularnewline
+\textless{} & Less than\tabularnewline
+\textgreater{} & Greater than\tabularnewline
+\textless{}= & Less than or equal to\tabularnewline
+\textgreater{}= & Greater than or equal to\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  These operators evaluate to \texttt{True} and \texttt{False}
+\end{itemize}
+
+    \hypertarget{comparison-operator-examples}{%
+\subsection{Comparison Operator
+Examples}\label{comparison-operator-examples}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{l+m+mi}{42} \PY{o}{==} \PY{l+m+mi}{42}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{l+m+mi}{42} \PY{o}{==} \PY{l+m+mi}{43}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{l+m+mi}{2} \PY{o}{!=} \PY{l+m+mi}{3}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}7}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{l+m+mi}{2} \PY{o}{!=} \PY{l+m+mi}{2}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} False
+\end{Verbatim}
+            
+    \hypertarget{boolean-operators}{%
+\section{Boolean Operators}\label{boolean-operators}}
+
+\begin{itemize}
+\tightlist
+\item
+  The three Boolean operators (\texttt{and}, \texttt{or}, and
+  \texttt{not}) are used to compare Boolean values.
+\item
+  Like comparison operators, they evaluate these expressions down to a
+  Boolean value
+\end{itemize}
+
+    \hypertarget{binary-boolean-operators}{%
+\subsection{Binary Boolean Operators}\label{binary-boolean-operators}}
+
+\begin{itemize}
+\tightlist
+\item
+  The \texttt{and} and \texttt{or} operators always take two Boolean
+  values (or expressions), so they're considered binary operators.
+\item
+  The \texttt{and} operator evaluates an expression to \texttt{True} if
+  both Boolean values are \texttt{True}; otherwise, it evaluates to
+  \texttt{False}.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{k+kc}{True} \PY{o+ow}{and} \PY{k+kc}{True}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k+kc}{True} \PY{o+ow}{and} \PY{k+kc}{False}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} False
+\end{Verbatim}
+            
+    \hypertarget{binary-boolean-table}{%
+\subsection{Binary Boolean Table}\label{binary-boolean-table}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Expression & Evaluates\tabularnewline
+\midrule
+\endhead
+True and True & True\tabularnewline
+True and False & False\tabularnewline
+False and True & False\tabularnewline
+False and False & False\tabularnewline
+True or True & True\tabularnewline
+True or False & True\tabularnewline
+False or True & True\tabularnewline
+False or False & False\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \hypertarget{not-operator}{%
+\subsection{not Operator}\label{not-operator}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{not} operator operates on only one Boolean value (or
+  expression)
+\item
+  \texttt{not} operator simply evaluates to the opposite Boolean value
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{o+ow}{not} \PY{k+kc}{True}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{o+ow}{not} \PY{k+kc}{False}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} True
+\end{Verbatim}
+            
+    \hypertarget{booleans-and-comparision-operators}{%
+\section{Booleans and Comparision
+Operators}\label{booleans-and-comparision-operators}}
+
+\begin{itemize}
+\tightlist
+\item
+  Comparison operators evaluate to Boolean values, you can use them in
+  expressions with the Boolean operators
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{p}{(}\PY{l+m+mi}{4} \PY{o}{\PYZlt{}} \PY{l+m+mi}{5}\PY{p}{)} \PY{o+ow}{and} \PY{p}{(}\PY{l+m+mi}{5} \PY{o}{\PYZlt{}} \PY{l+m+mi}{6}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{p}{(}\PY{l+m+mi}{4}\PY{o}{\PYZlt{}}\PY{l+m+mi}{5}\PY{p}{)} \PY{o+ow}{and} \PY{p}{(}\PY{l+m+mi}{9}\PY{o}{\PYZlt{}}\PY{l+m+mi}{6}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{==}\PY{l+m+mi}{2}\PY{p}{)} \PY{o+ow}{or} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{==} \PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} True
+\end{Verbatim}
+            
+    \begin{itemize}
+\tightlist
+\item
+  The computer will evaluate the left expression first, and then it will
+  evaluate the right expression
+\item
+  When it knows the Boolean value for each, it will then evaluate the
+  whole expression down to one Boolean value.
+\end{itemize}
+
+    \hypertarget{elements-of-flow-control}{%
+\section{Elements of Flow Control}\label{elements-of-flow-control}}
+
+\begin{itemize}
+\tightlist
+\item
+  Flow control statements often start with a part called the
+  \textbf{condition}
+\item
+  Followed by a block of code called the \textbf{clause}
+\end{itemize}
+
+    \hypertarget{conditions}{%
+\subsection{Conditions}\label{conditions}}
+
+\begin{itemize}
+\tightlist
+\item
+  The Boolean expressions you've seen so far could all be considered
+  conditions
+\item
+  Flow control statement decides what to do based on whether its
+  condition is \texttt{True} or \texttt{False}
+\end{itemize}
+
+    \hypertarget{blocks-of-code}{%
+\subsection{Blocks of Code}\label{blocks-of-code}}
+
+\begin{itemize}
+\item
+  Code can be grouped together in blocks
+\item
+  Block begins and ends from the indentation of the lines of code
+\item
+  There are three rules for blocks:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Blocks begin when the indentation increases
+  \item
+    Blocks can contain other blocks
+  \item
+    Blocks end when the indentation decreases to zero or to a containing
+    block's indentation.
+  \end{enumerate}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{user} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bob}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} User input}
+         \PY{n}{password} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{swordfish}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} Password input}
+         \PY{k}{if} \PY{n}{user} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hello }\PY{l+s+s1}{\PYZsq{}} \PY{o}{+} \PY{n}{user}\PY{p}{)}
+             \PY{k}{if} \PY{n}{password} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{swordfish}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Access granted.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{k}{else}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Wrong password.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hello Bob
+Access granted.
+
+    \end{Verbatim}
+
+    \hypertarget{if-statements}{%
+\section{if Statements}\label{if-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  The most common type of flow control statement is the if statement
+\item
+  An if statement's clause executes if the statement's condition is True
+\item
+  The clause is skipped if the condition is False
+\end{itemize}
+
+    \hypertarget{if-statements}{%
+\subsection{if Statements}\label{if-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  if statements consists of the following parts:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    the \texttt{if} keyword
+  \item
+    a condition (Expression evaluating to \texttt{True} or
+    \texttt{False})
+  \item
+    a colon
+  \item
+    starting on the next line, and indetned block of code (\textbf{if
+    clause})
+  \end{enumerate}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bob}\PY{l+s+s1}{\PYZsq{}}
+         \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hi, Alice.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \hypertarget{else-statements}{%
+\subsection{else Statements}\label{else-statements}}
+
+\begin{itemize}
+\item
+  else clause is executed only when the if statement's condition is
+  False - else statements consists of the following:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    The else keyword
+  \item
+    A colon
+  \item
+    Starting on the next line, an indented block of code (\textbf{else
+    clause})
+  \end{enumerate}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bob}\PY{l+s+s1}{\PYZsq{}}
+         \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hi, Alice.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{else}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{STRANGER DANGER!!!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+STRANGER DANGER!!!
+
+    \end{Verbatim}
+
+    \hypertarget{elif-statements}{%
+\subsection{elif Statements}\label{elif-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  The elif statement is an ``else if'' statement that always follows an
+  if or another elif statement
+\item
+  It provides another condition that is checked only if all of the
+  previous conditions were False
+\item
+  elif statement always consists of the following:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    The elif keyword
+  \item
+    A condition (that is, an expression that evaluates to True or False)
+  \item
+    A colon
+  \item
+    Starting on the next line, an indented block of code (\textbf{elif
+    clause})
+  \end{enumerate}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{age} \PY{o}{=} \PY{l+m+mi}{80}
+         \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hi, Alice.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZlt{}} \PY{l+m+mi}{10}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Stranger Danger!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hi, Alice.
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dracula}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{age} \PY{o}{=} \PY{l+m+mi}{4000}
+         \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hi, Alice.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZlt{}} \PY{l+m+mi}{12}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{You are not Alice, kiddo.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZgt{}} \PY{l+m+mi}{2000}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Unlike you, Alice is not an undead, immortal vampire.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{You are not Alice, grannie.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Unlike you, Alice is not an undead, immortal vampire.
+
+    \end{Verbatim}
+
+    \hypertarget{elif-statements}{%
+\subsection{elif statements}\label{elif-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  The order of the elif statements does matter, HOWEVER!!!
+\item
+  We can arrange the code so a bug forms
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dracula}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{age} \PY{o}{=} \PY{l+m+mi}{4000}
+         \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hi, Alice.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZlt{}} \PY{l+m+mi}{12}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{You are not Alice, kiddo.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{You are not Alice, grannie.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZgt{}} \PY{l+m+mi}{2000}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Unlike you, Alice is not an undead, immortal vampire.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+You are not Alice, grannie.
+
+    \end{Verbatim}
+
+    \hypertarget{elif-statements}{%
+\subsection{elif statements}\label{elif-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  You can have an else statement after the last elif statement
+\item
+  This case is guaranteed that at least one (and only one) of the
+  clauses will be executed
+\item
+  If the conditions in every if and elif statement are False, then the
+  else clause is executed.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bob}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{age} \PY{o}{=} \PY{l+m+mi}{30}
+         \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Alice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hi, Alice.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{elif} \PY{n}{age} \PY{o}{\PYZlt{}} \PY{l+m+mi}{12}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{You are not Alice, kiddo.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{else}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{You are neither Alice nor a little kid.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+You are neither Alice nor a little kid.
+
+    \end{Verbatim}
+
+    \hypertarget{while-loop-staements}{%
+\section{while Loop Staements}\label{while-loop-staements}}
+
+\begin{itemize}
+\item
+  Make a block of code execute over and over again with a \texttt{while}
+  statement
+\item
+  Code inside the \texttt{while} clause will be executed as long as the
+  \texttt{while} statement's condition is \texttt{True}
+\item
+  \texttt{while} statement always consists of the following:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    The while keyword
+  \item
+    A condition (that is, an expression that evaluates to True or False)
+  \item
+    A colon
+  \item
+    Starting on the next line, an indented block of code (\textbf{while
+    clause})
+  \end{enumerate}
+\end{itemize}
+
+    \hypertarget{while-loop}{%
+\subsection{while Loop}\label{while-loop}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{while} statement looks similar to \texttt{if} statements
+\item
+  The difference is how the behave.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{if}: program execution continues after the \texttt{if}
+    statement
+  \item
+    \texttt{while}: program execution jumps back to the start of the
+    \texttt{while} statement
+  \end{itemize}
+\end{itemize}
+
+    \hypertarget{comparison-of-if-and-while}{%
+\subsection{Comparison of if and
+while}\label{comparison-of-if-and-while}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{c+c1}{\PYZsh{} if statement}
+         \PY{n}{spam} \PY{o}{=} \PY{l+m+mi}{0}
+         \PY{k}{if} \PY{n}{spam} \PY{o}{\PYZlt{}} \PY{l+m+mi}{5}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hello world!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{spam} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1} \PY{c+c1}{\PYZsh{} Equiv to spam = spam + 1}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hello world!
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c+c1}{\PYZsh{} while statement}
+         \PY{n}{spam} \PY{o}{=} \PY{l+m+mi}{0}
+         \PY{k}{while} \PY{n}{spam} \PY{o}{\PYZlt{}} \PY{l+m+mi}{5}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hello world!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{spam} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+Hello world!
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{c+c1}{\PYZsh{} while loop example Explanation}
+         \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}} \PY{c+c1}{\PYZsh{} Empty string}
+         \PY{k}{while} \PY{n}{name} \PY{o}{!=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{your name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{c+c1}{\PYZsh{} while not equal to \PYZsq{}your name\PYZsq{}}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Please type your name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{name} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{} input assigned to name variable}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Thank you!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} when condition becomes `True` print this}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Please type your name
+your name
+Thank you!
+
+    \end{Verbatim}
+
+    \hypertarget{break-statements}{%
+\subsection{break statements}\label{break-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  To get out of a \texttt{while} loop early, use a \texttt{break}
+  statement
+\item
+  If execution reaches a \texttt{break} staement, it exits the loop
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{c+c1}{\PYZsh{} break statement explanation}
+         \PY{k}{while} \PY{k+kc}{True}\PY{p}{:} \PY{c+c1}{\PYZsh{} Create infinite loop (!dangerous!)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Type your name.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{n}{name} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{} input assigned to name variable}
+             \PY{k}{if} \PY{n}{name} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{your name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{c+c1}{\PYZsh{} Check if name equal to \PYZsq{}your name\PYZsq{}}
+                 \PY{k}{break} \PY{c+c1}{\PYZsh{} If this condition is true break (move on to next part)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Thank you!}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} End by printing thank you}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Type your name.
+your name
+Thank you!
+
+    \end{Verbatim}
+
+    \hypertarget{continue-statements}{%
+\subsection{continue statements}\label{continue-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  Similar to \texttt{break}, \texttt{continue} resides inside of a loop
+\item
+  When the execution reaches \texttt{continue}, program execution jumps
+  back to the start of the loop and reevalueates the loop's condition.
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+           \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Who are you?}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+           \PY{n}{name} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}
+           \PY{k}{if} \PY{n}{name} \PY{o}{!=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{c+c1}{\PYZsh{} If user give name beside bob     }
+             \PY{k}{continue}        \PY{c+c1}{\PYZsh{} jump back to start of loop}
+           \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hello, Bob. What is the password?}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} 
+           \PY{n}{password} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}\PY{c+c1}{\PYZsh{} If they make it past if statement request password}
+           \PY{k}{if} \PY{n}{password} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tofu}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+             \PY{k}{break}           \PY{c+c1}{\PYZsh{} If give correct password break the loop}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Access granted.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{} Print access granted}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Who are you?
+Name
+Who are you?
+Bob
+Hello, Bob. What is the password?
+tofu
+Access granted.
+
+    \end{Verbatim}
+
+    \hypertarget{for-loops-and-range-function}{%
+\section{for Loops and range()
+function}\label{for-loops-and-range-function}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{for} statement looks for something like for
+  \texttt{i\ in\ range(5):} and always includes:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \texttt{for} keyword
+  \item
+    variable name
+  \item
+    \texttt{in} keyword
+  \item
+    calls the \texttt{range()} function
+  \item
+    starting line, an indented block of code (\textbf{for clause})
+  \end{enumerate}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{My name is}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Jimmy Five Times (}\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+My name is
+Jimmy Five Times (0)
+Jimmy Five Times (1)
+Jimmy Five Times (2)
+Jimmy Five Times (3)
+Jimmy Five Times (4)
+
+    \end{Verbatim}
+
+    The code in the \texttt{for} loop clause runs five times.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{total} \PY{o}{=} \PY{l+m+mi}{0}
+         \PY{k}{for} \PY{n}{num} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{101}\PY{p}{)}\PY{p}{:}
+             \PY{n}{total} \PY{o}{=} \PY{n}{total} \PY{o}{+} \PY{n}{num}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{total}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+5050
+
+    \end{Verbatim}
+
+    \hypertarget{starting-stopping-stepping-with-range}{%
+\subsection{starting, stopping, stepping with
+range()}\label{starting-stopping-stepping-with-range}}
+
+\begin{itemize}
+\tightlist
+\item
+  (some) Functions can call multiple arguments separated by a comma
+\item
+  \texttt{range()} lets you pass a sequence of integers
+
+  \begin{itemize}
+  \tightlist
+  \item
+    start value, stop value, and step argument
+  \end{itemize}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0
+4
+8
+12
+16
+20
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} Create a countdown}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+
+    \end{Verbatim}
+
+    \hypertarget{importing-modules}{%
+\section{Importing Modules}\label{importing-modules}}
+
+\begin{itemize}
+\tightlist
+\item
+  Python programs can call a basic set of functions called
+  \textbf{built-in functions}, including the \texttt{print()},
+  \texttt{input()}, and \texttt{len()}
+\item
+  Python also comes with a set of \textbf{modules} called the
+  \textbf{standard library}
+\item
+  Each module is a Python program that contains a related group of
+  functions that can be embedded in your programs
+\item
+  Before you can use the functions in a module, you must import the
+  module with an import statement
+\end{itemize}
+
+    \hypertarget{importing-modules}{%
+\subsection{Importing Modules}\label{importing-modules}}
+
+\begin{itemize}
+\tightlist
+\item
+  An \texttt{import} statement consists of the following:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    The \texttt{import} keyword
+  \item
+    The name of the module
+  \item
+    (Optional) more module names, as long as they are separated by
+    commas
+  \end{enumerate}
+\end{itemize}
+
+    \hypertarget{random-module}{%
+\subsection{Random module}\label{random-module}}
+
+\begin{itemize}
+\tightlist
+\item
+  Once you import a module, you can use the functions of that module
+\item
+  Give the following a try:
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{k+kn}{import} \PY{n+nn}{random}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+4
+3
+1
+3
+5
+
+    \end{Verbatim}
+
+    When you run this program, the output will look similar (but not exactly
+like above)
+
+    \hypertarget{random-module}{%
+\subsection{random Module}\label{random-module}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{random.randint()} function call gives a random integer between
+  the two integers you pass it.
+\item
+  Since \texttt{randint()} is in the \texttt{random} module, you must
+  first type \texttt{random.} in front of the function.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This tells Python to look in the \texttt{random} module
+  \end{itemize}
+\end{itemize}
+
+    \hypertarget{importing-multiple-modules}{%
+\subsection{Importing multiple
+modules}\label{importing-multiple-modules}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{c+c1}{\PYZsh{} After running this line we\PYZsq{}ll be able to use the 4 modules}
+         \PY{k+kn}{import} \PY{n+nn}{random}\PY{o}{,} \PY{n+nn}{sys}\PY{o}{,} \PY{n+nn}{os}\PY{o}{,} \PY{n+nn}{math}
+\end{Verbatim}
+
+
+    \hypertarget{from-import-statements}{%
+\subsection{from import Statements}\label{from-import-statements}}
+
+\begin{itemize}
+\tightlist
+\item
+  It is possible to import only the functions from a specific module
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Using the full name makes your code more readable}
+  \end{itemize}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{c+c1}{\PYZsh{} star implies importing ALL functions from random}
+         \PY{k+kn}{from} \PY{n+nn}{random} \PY{k}{import} \PY{o}{*} 
+         \PY{c+c1}{\PYZsh{} Here we are only importing the square root function from}
+         \PY{c+c1}{\PYZsh{} the math module}
+         \PY{k+kn}{from} \PY{n+nn}{math} \PY{k}{import} \PY{n}{sqrt} 
+\end{Verbatim}
+
+
+    \hypertarget{ending-a-program-with-sys.exit}{%
+\section{Ending a program with
+sys.exit()}\label{ending-a-program-with-sys.exit}}
+
+\begin{itemize}
+\tightlist
+\item
+  A program traditionally terminates at the end of the program.
+\item
+  You can cause the program to terminate (exit) by calling the
+  \texttt{sys.exit()} function.
+\item
+  Since this module is in the \texttt{sys} module, you'll need to import
+  it first
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{import} \PY{n+nn}{sys}
+        \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Type exit to exit.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+            \PY{n}{response} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}
+            \PY{k}{if} \PY{n}{response} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{exit}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                \PY{n}{sys}\PY{o}{.}\PY{n}{exit}\PY{p}{(}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{You typed }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{response} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    This program has an infinite loop with no \texttt{break}. The only way
+to sop the program is if the user enters \texttt{exit} causing
+\texttt{sys.exit()} to be called
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
