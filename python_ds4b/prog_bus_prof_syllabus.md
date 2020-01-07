@@ -10,7 +10,7 @@
 1. [Wrangling](02_wrangle/README.md)
 1. [Program](03_program/README.md)
 1. [Model](04_model/README.md)
-1. [Communication](04_communication/README.md)
+1. [Communication](05_communication/README.md)
 
 ## What is expected of you
 
