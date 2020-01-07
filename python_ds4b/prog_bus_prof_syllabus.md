@@ -4,8 +4,8 @@
 
 
 ## Topic List
-1. [Basics of Data Science for Business](00_introduction/00_data_science_basics_business.ipynb)
-1. [Introduction](00_introduction/00_overview.ipynb)
+
+1. [Introduction](00_introduction/README.md)
 1. [Exploration](01_exploration/README.md)
 1. [Wrangling](02_wrangle/README.md)
 1. [Program](03_program/README.md)
