@@ -56,3 +56,7 @@ The easiest way to install Python and Jupyter is to:
 We will also be using [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb#). Colaboratory is a free Jupyter notebook environment that requires no setup and runs entirely in the cloud.
 
 With Colaboratory you can write and execute code, save and share your analyses, and access powerful computing resources, all for free from your browser.
+
+###
+
+Next we'll take a look at [Basics of Data Science for Business](00_introduction/00_data_science_basics_business.md).
