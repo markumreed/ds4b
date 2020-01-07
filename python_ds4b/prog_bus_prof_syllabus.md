@@ -4,14 +4,14 @@
 
 
 ## Topic List
-1. [Basics of Data Science for Business](python_ds4b/00_introduction/00_data_science_basics_business.ipynb)
-1. [Introduction](python_ds4b/00_introduction/00_overview.ipynb)
-1. [Exploration](python_ds4b/01_exploration/README.md)
-1. [Wrangling](python_ds4b/02_wrangle/README.md)
-1. [Program](python_ds4b/03_program/README.md)
-1. [Model](python_ds4b/04_model/README.md)
-1. [Communication](python_ds4b/04_communication/README.md)
+1. [Basics of Data Science for Business](00_introduction/00_data_science_basics_business.ipynb)
+1. [Introduction](00_introduction/00_overview.ipynb)
+1. [Exploration](01_exploration/README.md)
+1. [Wrangling](02_wrangle/README.md)
+1. [Program](03_program/README.md)
+1. [Model](04_model/README.md)
+1. [Communication](04_communication/README.md)
 
 ## What is expected of you
 
-- [What is expected from Undergraduates](what_is_expected_undergrad.md)
+- [What is expected from Undergraduates](../what_is_expected_undergrad.md)
