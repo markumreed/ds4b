@@ -59,4 +59,4 @@ With Colaboratory you can write and execute code, save and share your analyses, 
 
 ###
 
-Next we'll take a look at [Basics of Data Science for Business](00_introduction/00_data_science_basics_business.md).
+Next we'll take a look at [Basics of Data Science for Business](00_data_science_basics_business.md).
