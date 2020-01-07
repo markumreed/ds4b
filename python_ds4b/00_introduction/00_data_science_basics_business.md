@@ -2,17 +2,15 @@
 
 ## Types of Data Science
 
-1. Descriptive Analytics (Business Intelligence): Get useful data in front
+1. **Descriptive Analytics (Business Intelligence)**: Get useful data in front
 of the right people in the form of dashboards, reports, and emails
   - Which customers have churned?
   - Which homes have sold in a given locaAon, and do homes of a
  certain size sell more quickly?
-
-1. Predictive Analytics (Machine Learning): Put data science models continuously into production
+1. **Predictive Analytics (Machine Learning)**: Put data science models continuously into production
   - Which customers may churn?
   - How much will a home sell for, given its location and number of rooms?
-
-1. Prescriptive Analytics (Decision Science): Use data to help a company make decisions
+1. **Prescriptive Analytics (Decision Science)**: Use data to help a company make decisions
   - What should we do about the particular types of customers that are prone to churn?
   - How should we market a home to sell quickly, given its location and number of rooms?
 
