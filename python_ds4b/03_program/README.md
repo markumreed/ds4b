@@ -14,3 +14,8 @@ In the following four chapters, you’ll learn skills that will allow you to bot
 1. As you start to write more powerful functions, you’ll need a solid grounding in Python’s [data structures](). 
 
 1. Functions extract out repeated code, but you often need to repeat the same actions on different inputs. You need tools for [iteration]() that let you do similar things again and again. These tools include for loops and functional programming, which you’ll learn about in iteration.
+
+## Learning more
+The goal of these chapters is to teach you the minimum about programming that you need to practice data science, which turns out to be a reasonable amount. Once you have mastered the material in this book, I strongly believe you should invest further in your programming skills. Learning more about programming is a long-term investment: it won’t pay off immediately, but in the long term it will allow you to solve new problems more quickly, and let you reuse your insights from previous problems in new scenarios.
+
+To learn more you need to study Python as a programming language, not just an interactive environment for data science.
