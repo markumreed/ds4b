@@ -15,3 +15,23 @@
 ## What is expected of you
 
 - [What is expected from Undergraduates](../what_is_expected_undergrad.md)
+
+## DataCamp
+
+The assignments for this course are on DataCamp. Your goal for this class is to complete the [Data Analyst with Python career track](https://www.datacamp.com/tracks/data-analyst-with-python). 
+
+### Assignments
+You are to complete ALL of the [Data Analyst with Python career track](https://www.datacamp.com/tracks/data-analyst-with-python) courses. 
+1. [Introduction to Data Science in Python](https://www.datacamp.com/courses/introduction-to-data-science-in-python)
+1. [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science)
+1. [Python Data Science Toolbox (Part 1)](https://www.datacamp.com/courses/python-data-science-toolbox-part-1)
+1. [Python Data Science Toolbox (Part 2)](https://www.datacamp.com/courses/python-data-science-toolbox-part-2)
+1. [Importing Data in Python (Part 1)](https://www.datacamp.com/courses/importing-data-in-python-part-1)
+1. [Importing Data in Python (Part 2)](https://www.datacamp.com/courses/importing-data-in-python-part-2)
+1. [Cleaning Data in Python](https://www.datacamp.com/courses/cleaning-data-in-python)
+1. [Pandas Foundations](https://www.datacamp.com/courses/pandas-foundations)
+1. [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas)
+1. [Merging DataFrames with pandas](https://www.datacamp.com/courses/merging-dataframes-with-pandas)
+1. [Introduction to Relational Databases in SQL](https://www.datacamp.com/courses/introduction-to-relational-databases-in-sql)
+1. [Introduction to Shell](https://www.datacamp.com/courses/introduction-to-shell-for-data-science)
+1. [Conda Essentials](https://www.datacamp.com/courses/conda-essentials)
