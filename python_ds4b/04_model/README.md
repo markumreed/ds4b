@@ -12,7 +12,7 @@ This book is not going to give you a deep understanding of the mathematical theo
 
 - In [model building](01_model_building/README.md), you’ll learn how to use models to pull out known patterns in real data. Once you have recognised an important pattern it’s useful to make it explicit in a model, because then you can more easily see the subtler signals that remain.
 
-In [many models](02_many_models/README.md), you’ll learn how to use many simple models to help understand complex datasets. This is a powerful technique, but to access it you’ll need to combine modelling and programming tools.
+- In [many models](02_many_models/README.md), you’ll learn how to use many simple models to help understand complex datasets. This is a powerful technique, but to access it you’ll need to combine modelling and programming tools.
 
 These topics are notable because of what they don’t include: any tools for quantitatively assessing models. That is deliberate: precisely quantifying a model requires a couple of big ideas that we just don’t have the space to cover here. For now, you’ll rely on qualitative assessment and your natural scepticism. In [Learning more about models](), we’ll point you to other resources where you can learn more.
 
