@@ -8,11 +8,11 @@ The goal of a model is to provide a simple low-dimensional summary of a dataset.
 
 This book is not going to give you a deep understanding of the mathematical theory that underlies models. It will, however, build your intuition about how statistical models work, and give you a family of useful tools that allow you to use models to better understand your data:
 
-- In [model basics](), you’ll learn how models work mechanistically, focussing on the important family of linear models. You’ll learn general tools for gaining insight into what a predictive model tells you about your data, focussing on simple simulated datasets.
+- In [model basics](00_model_basics/README.md), you’ll learn how models work mechanistically, focussing on the important family of linear models. You’ll learn general tools for gaining insight into what a predictive model tells you about your data, focussing on simple simulated datasets.
 
-- In [model building](), you’ll learn how to use models to pull out known patterns in real data. Once you have recognised an important pattern it’s useful to make it explicit in a model, because then you can more easily see the subtler signals that remain.
+- In [model building](01_model_building/README.md), you’ll learn how to use models to pull out known patterns in real data. Once you have recognised an important pattern it’s useful to make it explicit in a model, because then you can more easily see the subtler signals that remain.
 
-In [many models](), you’ll learn how to use many simple models to help understand complex datasets. This is a powerful technique, but to access it you’ll need to combine modelling and programming tools.
+In [many models](02_many_models/README.md), you’ll learn how to use many simple models to help understand complex datasets. This is a powerful technique, but to access it you’ll need to combine modelling and programming tools.
 
 These topics are notable because of what they don’t include: any tools for quantitatively assessing models. That is deliberate: precisely quantifying a model requires a couple of big ideas that we just don’t have the space to cover here. For now, you’ll rely on qualitative assessment and your natural scepticism. In [Learning more about models](), we’ll point you to other resources where you can learn more.
 
