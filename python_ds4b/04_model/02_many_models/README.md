@@ -15,4 +15,5 @@ The following sections will dive into more detail about the individual technique
 1. 
 1. 
 1. 
+
 This chapter is somewhat aspirational: if this book is your first introduction to Python, this chapter is likely to be a struggle. It requires you have to deeply internalised ideas about modelling, data structures, and iteration. So don’t worry if you don’t get it — just put this chapter aside for a few months, and come back when you want to stretch your brain.
