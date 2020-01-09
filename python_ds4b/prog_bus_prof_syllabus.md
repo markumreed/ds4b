@@ -18,10 +18,10 @@
 
 ## DataCamp
 
-The assignments for this course are on DataCamp. Your goal for this class is to complete the [Data Analyst with Python career track](https://www.datacamp.com/tracks/data-analyst-with-python). 
+The assignments for this course are on DataCamp. Your goal for this class is to complete the [Python Programmer career track](https://www.datacamp.com/tracks/python-programmer). 
 
 ### Assignments
-You are to complete ALL of the [Data Analyst with Python career track](https://www.datacamp.com/tracks/data-analyst-with-python) courses. 
+You are to complete ALL of the [Python Programmer career track](https://www.datacamp.com/tracks/python-programmer) courses. 
 1. [Introduction to Data Science in Python](https://www.datacamp.com/courses/introduction-to-data-science-in-python)
 1. [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science)
 1. [Python Data Science Toolbox (Part 1)](https://www.datacamp.com/courses/python-data-science-toolbox-part-1)
