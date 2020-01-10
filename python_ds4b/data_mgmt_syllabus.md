@@ -36,6 +36,6 @@ You are to complete ALL of the [Data Analyst with Python career track](https://w
 1. [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas)
 1. [Merging DataFrames with pandas](https://www.datacamp.com/courses/merging-dataframes-with-pandas)
 1. [Analyzing Police Activity with pandas](https://www.datacamp.com/courses/analyzing-police-activity-with-pandas)
-1. [Introductino to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python)
+1. [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python)
 1. [Statistical Thinking in Python (Part 1)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1)
 1. [Statistical Thinking in Python (Part 2)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-2)
