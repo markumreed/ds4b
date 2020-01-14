@@ -57,6 +57,6 @@ We will also be using [Google Colab](https://colab.research.google.com/notebooks
 
 With Colaboratory you can write and execute code, save and share your analyses, and access powerful computing resources, all for free from your browser.
 
-###
+### Next
 
 Next we'll take a look at [Basics of Data Science for Business](00_data_science_basics_business.md).
