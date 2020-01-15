@@ -6,9 +6,9 @@ The goal of the first part of this book is to get you up to speed with the basic
 
 In this part of the book you will learn some useful tools that have an immediate payoff:
 
-- Visualization is a great place to start with Python programming, because the payoff is so clear: you get to make elegant and informative plots that help you understand data. In [data visualization](00_data_visualization/00_data_visualization_seaborn.ipynb) you’ll dive into visualization, learning the basic structure of seaborn, and powerful techniques for turning data into plots.
+- Visualization is a great place to start with Python programming, because the payoff is so clear: you get to make elegant and informative plots that help you understand data. In [data visualization](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/01_exploration/00_data_visualization/00_data_visualization_seaborn.ipynb) you’ll dive into visualization, learning the basic structure of seaborn, and powerful techniques for turning data into plots.
 
-- Visualization alone is typically not enough, so in [data transformation](02_data_transformation/02_data_transformation.ipynb) you’ll learn the key operations that allow you to select important variables, filter out key observations, create new variables, and compute summaries.
+- Visualization alone is typically not enough, so in [data transformation](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/01_exploration/02_data_transformation/02_data_transformation.ipynb) you’ll learn the key operations that allow you to select important variables, filter out key observations, create new variables, and compute summaries.
 
 - Finally, in [exploratory data analysis](03_exploratory_data_analysis/00_eda.ipynb), you’ll combine visualisation and transformation with your curiosity and scepticism to ask and answer interesting questions about data.
 
