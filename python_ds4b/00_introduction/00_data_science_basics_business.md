@@ -58,6 +58,7 @@ The type of dashboard you should use depends on what you'll be using it for.
 
 
 ### Popular Dashboard Tools
+
 | **Spreadsheets** | **BI Tools** | **Customized Tools** |
 |------------------|--------------|----------------------|
 | Excel            | Power BI     | R Shiny              |
@@ -72,6 +73,7 @@ The type of dashboard you should use depends on what you'll be using it for.
 ## Experimentation and Prediction
 ### Machine Learning
 Machine learning is an application of artificial intelligence (AI) that builds algorithms ad statistical models to train data to address specific questions without explicit instructions. 
+
 
 |             | **Supervised Machine Learning**                                      | **Unsupervised Machine Learning**                                   |
 |-------------|----------------------------------------------------------------------|---------------------------------------------------------------------|
