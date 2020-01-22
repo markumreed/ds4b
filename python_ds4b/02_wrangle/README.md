@@ -6,11 +6,11 @@ In this part of the book, you’ll learn about data wrangling, the art of gettin
 
 This part of the book proceeds as follows:
 
-- In [DataFrames](01_dataframes.ipynb), you’ll learn about the variant of the data frame that we use in this book: the DataFrame. You’ll learn what makes them different from regular data frames, and how you can construct them “by hand”.
+- In [DataFrames](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/02_wrangle/01_dataframes.ipynb), you’ll learn about the variant of the data frame that we use in this book: the DataFrame. You’ll learn what makes them different from regular data frames, and how you can construct them “by hand”.
 
-- In [data import](02_data_import.ipynb), you’ll learn how to get your data from disk and into Python. We’ll focus on plain-text rectangular formats, but will give you pointers to packages that help with other types of data.
+- In [data import](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/02_wrangle/02_data_import.ipynb), you’ll learn how to get your data from disk and into Python. We’ll focus on plain-text rectangular formats, but will give you pointers to packages that help with other types of data.
 
-- In [tidy data](03_tidy_data.ipynb), you’ll learn about tidy data, a consistent way of storing your data that makes transformation, visualisation, and modelling easier. You’ll learn the underlying principles, and how to get your data into a tidy form.
+- In [tidy data](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/02_wrangle/03_tidy_data.ipynb), you’ll learn about tidy data, a consistent way of storing your data that makes transformation, visualisation, and modelling easier. You’ll learn the underlying principles, and how to get your data into a tidy form.
 
 Data wrangling also encompasses data transformation, which you’ve already learned a little about. Now we’ll focus on new skills for three specific types of data you will frequently encounter in practice:
 
