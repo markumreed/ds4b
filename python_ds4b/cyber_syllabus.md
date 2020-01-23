@@ -18,22 +18,16 @@ See [Data Science for Business](ds4b_syllabus.md) for information about the sugg
 
 ## Topics List
 
-1. Introduction to Python Concepts
-1. Advance Further into Python
-1. Web Recon
-1. Port Scanning
-1. Packet Sniffing
-1. TCP Packet Injection
-1. Perform forensic analysis
-1. Perform malware analysis
-
 ### Course Material
 
-1. [Digital Forensics]()
-1. [Exploitation Analysis]()
-1. [Software Development]()
-1. [Systems Analysis]()
-1. [Vulnerability Assessment and Management]()
+1. [Introduction to Python Concepts](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/00_introduction/01_python_basics.ipynb)
+1. [Advance Further into Python]()
+1. [Web Recon]()
+1. [Port Scanning]()
+1. [Packet Sniffing]()
+1. [TCP Packet Injection]()
+1. [Perform forensic analysis]()
+1. [Perform malware analysis]()
 
 
 
