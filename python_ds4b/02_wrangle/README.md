@@ -22,6 +22,6 @@ Data wrangling also encompasses data transformation, which you’ve already lear
 
 - [Dates and times]() will give you the key tools for working with dates and date-times.
 
-[Next Section: Introduction to Wrangling](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/02_wrangle/00_wrangle.ipynb)
+[Next Section: DataFrames](https://colab.research.google.com/github/SoIllEconomist/ds4b/blob/master/python_ds4b/02_wrangle/01_dataframes.ipynb)
 
 
