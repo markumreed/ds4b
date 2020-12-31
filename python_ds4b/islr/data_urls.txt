@@ -1,0 +1,9 @@
+https://statlearning.com/Advertising.csv
+https://statlearning.com/Auto.data
+https://statlearning.com/College.csv
+https://statlearning.com/Ch10Ex11.csv
+https://statlearning.com/Credit.csv
+https://statlearning.com/Income1.csv
+https://statlearning.com/Income2.csv
+https://statlearning.com/Heart.csv
+

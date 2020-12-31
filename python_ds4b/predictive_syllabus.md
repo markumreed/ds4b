@@ -3,6 +3,10 @@ This course aims to go beyond the classical statistical methods. As computing po
 
 ## Topics List
 
+### Course Text
+
+In this course we will be following [James, Gareth, et al. An introduction to statistical learning. Vol. 112. New York: springer, 2013.](https://statlearning.com/ISLR%20Seventh%20Printing.pdf).
+
 ### Review Material
 1. [Introduction](00_introduction/README.md)
 1. [Exploration](01_exploration/README.md)
@@ -10,29 +14,23 @@ This course aims to go beyond the classical statistical methods. As computing po
 1. [Program](03_program/README.md)
 
 ### Course Material
-1. [Model](04_model/README.md)
-1. [Machine Learning](07_machine_learning/README.md)
-1. [Deep Learning](08_deep_learning/README.md)
-1. [Communication](05_communication/README.md)
 
-## DataCamp
 
-The assignments for this course are on DataCamp. Your goal for this class is to complete MOST the [Machine Learning Scientist with Python career track](https://www.datacamp.com/tracks/machine-learning-scientist-with-python). 
+| **Course Material**                           | **Reading Assignment** | **Labs**                                                                | **DataCamp** | **Due Date** |
+|-----------------------------------------------|------------------------|-------------------------------------------------------------------------|--------------|--------------|
+| [Introduction to Machine Learning]()          | Ch. 1,2                | [Intro to Python]()                                                     |              |              |
+| [Linear Regression]()                         | Ch. 3                  | [Linear Regression]()                                                   |              |              |
+| [Classification]()                            | Ch. 4                  | [Logistic Regression]() [LDA]() [QDA]() [KNN]()                         |              |              |
+| [Resampling]()                                | Ch. 5                  | [Cross-Validation and the Bootstrap]()                                  |              |              |
+| [Linear Model Selection and Regularization]() | Ch. 6                  | [Subset Selection Methods]() [Elastic Net Regression]() [PCR and PLS]() |              |              |
+| [Moving Beyond Linearity]()                   | Ch. 7                  | [Non-linear Modeling]()                                                 |              |              |
+| [Tree Based Methods]()                        | Ch. 8                  | [Decision Trees]()                                                      |              |              |
+| [Support Vector Machines]()                   | Ch. 9                  | [Support Vector Machines]()                                             |              |              |
+| [Unsupervised Learning]()                     | Ch. 10                 | [Principal Components Analysis]() [Clustering]() [NCI60 Example]()      |              |              |
 
-### Assignments
-You are to complete MOST of the [Machine Learning Scientist with Python career track](https://www.datacamp.com/tracks/machine-learning-scientist-with-python). Specifically, the courses below. 
-1. [Data Science for Business Leaders](https://www.datacamp.com/courses/data-science-for-business-leaders)
-1. [Supervised Learning with scikit-learn](https://www.datacamp.com/courses/supervised-learning-with-scikit-learn)
-1. [Unsupervised Learning in Python](https://www.datacamp.com/courses/unsupervised-learning-in-python)
-1. [Linear Classifiers in Python](https://www.datacamp.com/courses/linear-classifiers-in-python)
-1. [Machine Learning with Tree Based Models in Python](https://www.datacamp.com/courses/machine-learning-with-tree-based-models-in-python)
-1. [Extreme Gradient Boosting with XGBoost](https://www.datacamp.com/courses/extreme-gradient-boosting-with-xgboost)
-1. [Dimensionality Reduction in Python](https://www.datacamp.com/courses/dimensionality-reduction-in-python)
-1. [Preprocessing for Machine Learning in Python](https://www.datacamp.com/courses/preprocessing-for-machine-learning-in-python)
-1. [Feature Engineering for Machine Learning in Python](datacamp.com/courses/feature-engineering-for-machine-learning-in-python)
-1. [Model Validation in Python](https://www.datacamp.com/courses/model-validation-in-python)
-1. [Introduction to TensorFlow in Python](https://www.datacamp.com/courses/introduction-to-tensorflow-in-python)
-1. [Introduction to Deep Learning in Python](https://www.datacamp.com/courses/deep-learning-in-python)
-1. [Introduction to Deep Learning with Keras](https://www.datacamp.com/courses/deep-learning-with-keras-in-python)
-1. [Advanced Deep Learning with Keras](https://www.datacamp.com/courses/advanced-deep-learning-with-keras-in-python)
-1. [Hyperparameter Tuning in Python](https://www.datacamp.com/courses/hyperparameter-tuning-in-python)
+
+## Assignments
+### DataCamp
+The assignments for this course are on DataCamp. Your goal for this class is to complete the [Machine Learning Scientist with Python career track](https://www.datacamp.com/tracks/machine-learning-scientist-with-python). 
+
+### Labs
