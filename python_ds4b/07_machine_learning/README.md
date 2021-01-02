@@ -65,9 +65,9 @@ wish to estimate the age of an object based on such observations: this would be 
 because the label (age) is a continuous quantity.
 
 Here are some of the most important supervised learning algorithms:
-- k-Nearest Neighbors
 - Linear Regression 
 - Logistic Regression 
+- k-Nearest Neighbors
 - Support Vector Machines (SVMs) 
 - Decision Trees and Random Forests 
 - Neural networks
@@ -114,10 +114,10 @@ Here are some of the most important unsupervised learning algorithms (most of th
     - Apriori 
     - Eclat
 
-### Semisupervised Learning
+### Semi-supervised Learning
 Some algorithms can deal with partially labeled training data, usually a lot of unlabeled data and a little bit of labeled data. This is called *semisupervised learning*.
 
-Most semisupervised learning algorithms are combinations of unsupervised and supervised algorithms. For example, deep belief networks (DBNs) are based on unsupervised components called restricted Boltzmann machines (RBMs) stacked on top of one another. RBMs are trained sequentially in an unsupervised manner, and then the whole system is fine-tuned using supervised learning techniques.
+Most semi-supervised learning algorithms are combinations of unsupervised and supervised algorithms. For example, deep belief networks (DBNs) are based on unsupervised components called restricted Boltzmann machines (RBMs) stacked on top of one another. RBMs are trained sequentially in an unsupervised manner, and then the whole system is fine-tuned using supervised learning techniques.
 
 ### Reinforement Learning
 *Reinforcement Learning* is a very different beast. The learning system, called an agent in this context, can observe the environment, select and perform actions, and get rewards in return (or penalties in the form of negative rewards). It must then learn by itself what is the best strategy, called a policy, to get the most reward over time. A policy defines what action the agent should choose when it is in a given situation.

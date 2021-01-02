@@ -1,4 +1,4 @@
-# Data Management
+#Data Management
 
 You’ll learn how to get data, get it into the most useful structure, transform it, visualize it and model it. In this course, you will find a practicum of skills for data science. You’ll learn how to clean data and draw plots—and many other things besides. These are the skills that allow data science to happen, and here you will find the best practices for doing each of these things. You’ll learn how to use the grammar of graphics, literate programming, and reproducible research to save time. You’ll also learn how to manage cognitive resources to facilitate discoveries when wrangling, visualizing and exploring data. This is a three-credit hour course. 
 
@@ -16,26 +16,15 @@ You’ll learn how to get data, get it into the most useful structure, transform
 
 - [What is expected from Undergraduates](../what_is_expected_undergrad.md)
 
-## DataCamp
+## 
 
-The assignments for this course are on DataCamp. Your goal for this class is to complete the [Data Analyst with Python career track](https://www.datacamp.com/tracks/data-analyst-with-python). 
+| **Course Material** | **Reading Assignment** | **Labs**                                                                                                                                                             | **DataCamp** | **Due Date** |
+|---------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|--------------|
+| [Introduction]()    | Ch. 1                  |                                                                                                                                                                      |              |              |
+| [Explore]()         | Ch. 2-8                | 3.2.4, 3.3.1, 3.5.1, 3.6.1, 3.7.1, 3.8.1, 3.9.1, 4.4, 5.2.4, 5.3.1, 5.4.1, 5.5.2, 5.6.7, 5.7.1, 6.3, 7.3.4, 7.4.1                                                    |              |              |
+| [Wrangle]()         | Ch. 9-16               | 10.5, 11.2.2, 11.3.5, 12.2.1, 12.3.3, 12.4.3, 12.5.1, 12.6.1, 13.2.1, 13.3.1, 13.4.6, 13.5.1, 14.2.5, 14.5.1, 14.7.1, 15.3.1, 15.4.1, 15.5.1, 16.2.4, 16.3.4, 16.4.5 |              |              |
+| [Program]()         | Ch. 17-21              | 19.2.1, 19.3.1, 19.4.4, 19.5.5, 20.3.5, 20.4.6, 20.5.4, 20.5.4, 21.2.1, 21.3.5, 21.5.3, 21.9.3                                                                       |              |              |
+| [Model]()           | Ch. 22-25              | 23.2.1, 23.3.3, 23.4.5, 24.2.3, 24.3.5, 25.2.5, 25.4.5, 25.5.3                                                                                                       |              |              |
+| [Communicate]()     | Ch. 26-30              | 27.2.1, 27.3.1, 27.4.7                                                                                                                                               |              |              |
+| [SQL]()             |                        |                                                                                                                                                                      |              |              |
 
-### Assignments
-You are to complete ALL of the [Data Analyst with Python career track](https://www.datacamp.com/tracks/data-analyst-with-python) courses. 
-1. [Data Science for Business Leaders](https://www.datacamp.com/courses/data-science-for-business-leaders)
-1. [Introduction to Data Science in Python](https://www.datacamp.com/courses/introduction-to-data-science-in-python)
-1. [Intermediate Python](https://www.datacamp.com/courses/intermediate-python-for-data-science)
-1. [Python Data Science Toolbox (Part 1)](https://www.datacamp.com/courses/python-data-science-toolbox-part-1)
-1. [Introduction to SQL](https://www.datacamp.com/courses/intro-to-sql-for-data-science)
-1. [Joining Data in SQL](https://www.datacamp.com/courses/joining-data-in-postgresql)
-1. [Introduction to Relational Databases in SQL](https://www.datacamp.com/courses/introduction-to-relational-databases-in-sql)
-1. [Importing Data in Python (Part 1)](https://www.datacamp.com/courses/importing-data-in-python-part-1)
-1. [Importing Data in Python (Part 2)](https://www.datacamp.com/courses/importing-data-in-python-part-2)
-1. [Cleaning Data in Python](https://www.datacamp.com/courses/cleaning-data-in-python)
-1. [Pandas Foundations](https://www.datacamp.com/courses/pandas-foundations)
-1. [Manipulating DataFrames with pandas](https://www.datacamp.com/courses/manipulating-dataframes-with-pandas)
-1. [Merging DataFrames with pandas](https://www.datacamp.com/courses/merging-dataframes-with-pandas)
-1. [Analyzing Police Activity with pandas](https://www.datacamp.com/courses/analyzing-police-activity-with-pandas)
-1. [Introduction to Data Visualization with Python](https://www.datacamp.com/courses/introduction-to-data-visualization-with-python)
-1. [Statistical Thinking in Python (Part 1)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-1)
-1. [Statistical Thinking in Python (Part 2)](https://www.datacamp.com/courses/statistical-thinking-in-python-part-2)
